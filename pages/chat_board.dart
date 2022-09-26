@@ -18,41 +18,38 @@ class _MyWidgetState extends State<ChatBody> {
         appBar: AppBar(
           title: Text(widget.name),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) => 
-                   Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: Colors.black12,
-                        borderRadius: BorderRadiusDirectional.circular(10)),
-                    child: Message(isMe: isMe, message: 'hello word',),
-                  ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) => 
+                 Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadiusDirectional.circular(10)),
+                  child: Message(isMe: isMe, message: 'hello word',),
                 ),
               ),
-              SizedBox(height: 10),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      
-                      decoration: InputDecoration(
-                        hintText: 'Type message...',
-                          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
-                    )
-                    ),
+            ),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    
+                    decoration: InputDecoration(
+                      hintText: 'Type message...',
+                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                  )
                   ),
-                  IconButton(onPressed: (){}, icon: const Icon(Icons.send))
-                ],
-              )
-            ],
-          ),
+                ),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.send))
+              ],
+            )
+          ],
         ),
       ),
     );
