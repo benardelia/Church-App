@@ -11,6 +11,13 @@ class Verse extends StatefulWidget {
 class _SocialState extends State<Verse> {
   @override
   Widget build(BuildContext context) {
-    return  Center(child: Container(padding: EdgeInsets.all(8), decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.blueAccent,), child: Text('Mungu akasema...')));
+    return Center(
+        child: Container(
+            padding: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.blueAccent,
+            ),
+            child: Text('Mungu akasema...')));
   }
 }

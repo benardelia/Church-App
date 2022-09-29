@@ -1,15 +1,20 @@
 import 'package:church/pages/chats.dart';
 import 'package:church/pages/groups.dart';
 import 'package:church/pages/lessons.dart';
+import 'package:church/pages/loginpage.dart';
 import 'package:church/pages/social.dart';
 import 'package:church/pages/verse.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  
   runApp(const MaterialApp(
-    home: Home(),
+    home: Login(),
     debugShowCheckedModeBanner: false,
   ));
+ await Firebase.initializeApp();
+
 }
 
 class Home extends StatefulWidget {
@@ -20,7 +25,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
- final List<Widget> navigationPages = const [Chats(), Groups(), Verse(), Lessons(), Social()];
+  final List<Widget> navigationPages = const [
+    Chats(),
+    Groups(),
+    Verse(),
+    Lessons(),
+    Social()
+  ];
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
